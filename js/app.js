@@ -14,13 +14,14 @@ const ocultarTexto = () =>{
     console.log('Desde la funcion que oculta el texto')
     const parrafo = document.querySelector('.mt-3')
    //ocultar/mostrar el parrafo
+   parrafo.classList.toggle('d-none')
     if(botones[3].textContent === 'Ocultar'){
-        parrafo.classList.add('d-none')
+        // parrafo.classList.add('d-none')
         botones[3].textContent = 'Ver mas'
         botones[3].classList.remove('btn-danger')
         botones[3].classList.add('btn-success')
     }else{
-        parrafo.classList.remove('d-none')
+        // parrafo.classList.remove('d-none')
         botones[3].textContent = 'Ocultar'
         botones[3].classList.remove('btn-success')
         botones[3].classList.add('btn-danger')
