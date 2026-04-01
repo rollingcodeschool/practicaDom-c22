@@ -29,12 +29,20 @@ const ocultarTexto = () =>{
 
 }
 
+const eliminarParrafo = ()=>{
+    //buscar el parrafo a eliminar
+    const parrafo = document.getElementById('parrafo-eliminar')
+    //eliminar
+    parrafo.remove()
+    botones[4].classList.add('disabled')
+}
+
 //Buscar el boton
 // const botones = document.querySelectorAll('.btn')
 const botones = document.getElementsByTagName('button')
 
 //agregar el manejador de eventos
 botones[3].addEventListener('click', ocultarTexto)
-
+botones[4].addEventListener('click', eliminarParrafo)
 //? caso especial cuando agregamos una funcion con parametros
 // botones[3].addEventListener('click', ()=> ocultarTexto('texto de prueba'))
