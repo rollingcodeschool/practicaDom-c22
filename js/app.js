@@ -36,13 +36,35 @@ const eliminarParrafo = ()=>{
     parrafo.remove()
     botones[4].classList.add('disabled')
 }
+const crearTarea = (e)=>{
+e.preventDefault()    
+// console.log(e)
+//acceder al texto del input
+const tarea = document.getElementById('tarea').value
+const ul = document.querySelector('.list-group')
+
+//? Opcion 1
+//crear el li con sus valores
+// const li = document.createElement('li') //<li></li>
+// li.classList.add("list-group-item")
+// li.textContent = tarea
+// ul.appendChild(li)
+
+//? opcion 2
+ul.innerHTML += `<li class="list-group-item">${tarea}</li>`
+
+//limpiar el formulario
+formTarea.reset()
+}
 
 //Buscar el boton
 // const botones = document.querySelectorAll('.btn')
 const botones = document.getElementsByTagName('button')
+const formTarea = document.getElementById('formTarea')
 
 //agregar el manejador de eventos
 botones[3].addEventListener('click', ocultarTexto)
 botones[4].addEventListener('click', eliminarParrafo)
+formTarea.addEventListener('submit', crearTarea)
 //? caso especial cuando agregamos una funcion con parametros
 // botones[3].addEventListener('click', ()=> ocultarTexto('texto de prueba'))
