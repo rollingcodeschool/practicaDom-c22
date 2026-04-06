@@ -82,6 +82,7 @@ const mostrarAlert = () => {
 const botones = document.getElementsByTagName("button");
 const formTarea = document.getElementById("formTarea");
 const btnMostrarAlert = document.getElementById("btnMostrarAlert");
+const reloj = document.getElementById('reloj')
 
 //agregar el manejador de eventos
 botones[3].addEventListener("click", ocultarTexto);
@@ -90,3 +91,15 @@ formTarea.addEventListener("submit", crearTarea);
 //? caso especial cuando agregamos una funcion con parametros
 // botones[3].addEventListener('click', ()=> ocultarTexto('texto de prueba'))
 btnMostrarAlert.addEventListener("click", mostrarAlert);
+
+
+
+setInterval(() => {
+    const hora = new Date()
+    const segundos = hora.getSeconds() <10 ? '0'+hora.getSeconds() : hora.getSeconds()
+    reloj.textContent = `${hora.getHours()}:${hora.getMinutes()}:${segundos}`
+//    console.log(hora)
+// console.log(hora.getHours())
+// console.log(hora.getMinutes())
+// console.log(hora.getSeconds())
+}, 1000);
