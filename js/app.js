@@ -41,6 +41,13 @@ e.preventDefault()
 // console.log(e)
 //acceder al texto del input
 const tarea = document.getElementById('tarea').value
+const regExp = /^[a-zA-Z0-9 ]+$/
+
+if(!regExp.test(tarea)){
+    alert('Ingresaste un valor erroneo');
+    return
+}
+
 const ul = document.querySelector('.list-group')
 
 //? Opcion 1
