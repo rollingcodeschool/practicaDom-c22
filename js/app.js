@@ -109,3 +109,19 @@ const idIntervalo= setInterval(() => {
 // console.log(hora.getMinutes())
 // console.log(hora.getSeconds())
 }, 1000);
+
+const fecha = new Date()
+console.log(fecha)
+console.log(fecha.getFullYear())
+console.log(fecha.getMonth())
+console.log(fecha.getDate())
+console.log(fecha.getDay())
+
+const formato = {
+    weekday: "long", // 'long' (ej. "lunes"), 'short' (ej. "lun"), 'narrow' (ej. "L")
+    year: "numeric", //'numeric' (ej. "2023"), '2-digit' (ej. "23")
+    month: "long", // 'numeric' (ej. "1"), '2-digit' (ej. "01"), 'long' (ej. "enero"), 'short' (ej. "ene"), 'narrow' (ej. "E")
+    day: "numeric", //'numeric' (ej. "3"), '2-digit' (ej. "03")
+}
+
+console.log(fecha.toLocaleDateString(undefined, formato))
