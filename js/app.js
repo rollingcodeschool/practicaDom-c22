@@ -72,6 +72,11 @@ const mostrarAlert = () => {
   }, 3000);
 };
 
+const detenerReloj = () =>{
+    console.log('desde la funcion detener reloj')
+    clearInterval(idIntervalo)
+}
+
 // const mostrarAlert2 = () => {
 //   const alert = document.querySelector(".alert");
 //   alert.classList.remove("d-none");
@@ -83,6 +88,7 @@ const botones = document.getElementsByTagName("button");
 const formTarea = document.getElementById("formTarea");
 const btnMostrarAlert = document.getElementById("btnMostrarAlert");
 const reloj = document.getElementById('reloj')
+const btnDentenerReloj = document.querySelector('.btn-outline-danger')
 
 //agregar el manejador de eventos
 botones[3].addEventListener("click", ocultarTexto);
@@ -91,10 +97,10 @@ formTarea.addEventListener("submit", crearTarea);
 //? caso especial cuando agregamos una funcion con parametros
 // botones[3].addEventListener('click', ()=> ocultarTexto('texto de prueba'))
 btnMostrarAlert.addEventListener("click", mostrarAlert);
+btnDentenerReloj.addEventListener('click', detenerReloj)
 
 
-
-setInterval(() => {
+const idIntervalo= setInterval(() => {
     const hora = new Date()
     const segundos = hora.getSeconds() <10 ? '0'+hora.getSeconds() : hora.getSeconds()
     reloj.textContent = `${hora.getHours()}:${hora.getMinutes()}:${segundos}`
